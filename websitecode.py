@@ -42,7 +42,7 @@ app_mode = st.sidebar.selectbox("Choose the section", ["Home", "Company Sentimen
 
 if app_mode == 'Home':
     st.write("Where you can see the daily sentiment for equties and the market.")
-    image = Image.open(r'C:\Users\pkilzer\Thisllwork\Screenshot 2023-07-06 113640.png')
+    image = Image.open('Screenshot 2023-07-06 113640.png')
     st.image(image, caption='Journal of Economic Perspectives')
 
 elif app_mode == 'Company Sentiment':
