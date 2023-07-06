@@ -45,7 +45,7 @@ if app_mode == 'Home':
 
 elif app_mode == 'Company Sentiment':
     company_name = st.text_input('Enter a company ticker')
-    company_name = company_name.upper
+    company_name = company_name.upper()
     if st.button('Get Sentiment'):
         sentences, links, summaries = sentiment.get_news(company_name)
         sentiment_scores =  sentiment.get_sentiment(sentences)
