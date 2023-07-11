@@ -52,11 +52,20 @@ elif app_mode == 'Company Sentiment':
         avgpos, avgneg, avgneu = sentiment.avgscore(sentiment_scores)
         avgpos = round(avgpos * 10 * 100, 2)
         avgneg = round(avgneg * 10 * 100, 2)
-        avgneu = round(avgneu * 100, 2)
+        avgneu = round(avgneu * 100, 2)# Calculate the total sum of scores
+        total_score = avgpos + avgneu + avgneg
+
+        # Calculate the percentage for each score
+        positive_percentage = (positive_score / total_score) * 100
+        neutral_percentage = (neutral_score / total_score) * 100
+        negative_percentage = (negative_score / total_score) * 100
+
+        # Apply weights to the percentages
+        final_score = round((positive_percentage * 100) + (neutral_percentage * 50) + (negative_percentage * 0), 0)
         for i in range(5):
             st.write(sentences[i])
             st.write(links[i])
-        st.write("Positive: " + str(avgpos) + " Negative: " + str(avgneg) + " Neutral: " + str(avgneu))
+        st.write("Sentiment Score (100 is positive 0 is negative): " + final_score)
         categories = ['Positive', 'Neutral', 'Negative']
         values = [avgpos, avgneu, avgneg]
         colors = ['green', 'yellow', 'red']
@@ -88,10 +97,19 @@ elif app_mode == 'Market Info':
     avgpos = round(avgpos, 2) * 10 * 100
     avgneg = round(avgneg, 2) * 10 * 100
     avgneu = round(avgneu, 2) * 100
+    total_score = avgpos + avgneu + avgneg
+
+    # Calculate the percentage for each score
+    positive_percentage = (positive_score / total_score) * 100
+    neutral_percentage = (neutral_score / total_score) * 100
+    negative_percentage = (negative_score / total_score) * 100
+    # Apply weights to the percentages
+    final_score = round((positive_percentage * 100) + (neutral_percentage * 50) + (negative_percentage * 0), 0)
+    
     for i in range(5):
         st.write(sentences[i])
         st.write(links[i])
-    st.write("Positive: " + str(avgpos) + " Negative: " + str(avgneg) + " Neutral: " + str(avgneu))
+    st.write("Sentiment Score (100 is positive 0 is negative): " + final_score)
     categories = ['Positive', 'Neutral', 'Negative']
     values = [avgpos, avgneu, avgneg]
     colors = ['green', 'yellow', 'red']
