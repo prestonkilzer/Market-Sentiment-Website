@@ -5,7 +5,6 @@ import json
 from datetime import datetime, timedelta
 from PIL import Image
 import matplotlib.pyplot as plt
-
 # Other required imports here...
 
 # Define functions for your application
@@ -56,9 +55,9 @@ elif app_mode == 'Company Sentiment':
         total_score = avgpos + avgneu + avgneg
 
         # Calculate the percentage for each score
-        positive_percentage = (positive_score / total_score) * 100
-        neutral_percentage = (neutral_score / total_score) * 100
-        negative_percentage = (negative_score / total_score) * 100
+        positive_percentage = (avgpos / total_score) * 100
+        neutral_percentage = (avgneu / total_score) * 100
+        negative_percentage = (avgneg / total_score) * 100
 
         # Apply weights to the percentages
         final_score = round((positive_percentage * 100) + (neutral_percentage * 50) + (negative_percentage * 0), 0)
@@ -100,9 +99,9 @@ elif app_mode == 'Market Info':
     total_score = avgpos + avgneu + avgneg
 
     # Calculate the percentage for each score
-    positive_percentage = (positive_score / total_score) * 100
-    neutral_percentage = (neutral_score / total_score) * 100
-    negative_percentage = (negative_score / total_score) * 100
+    positive_percentage = (avgpos / total_score) * 100
+    neutral_percentage = (avgneu / total_score) * 100
+    negative_percentage = (avgneg / total_score) * 100
     # Apply weights to the percentages
     final_score = round((positive_percentage * 100) + (neutral_percentage * 50) + (negative_percentage * 0), 0)
     
