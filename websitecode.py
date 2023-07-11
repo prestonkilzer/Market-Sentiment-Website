@@ -164,7 +164,8 @@ elif app_mode == 'Private Holdings':
                 st.write("Title:", title)
                 st.write("Link:", link)
                 st.write()
-
+        if not articles:
+            st.write("No recent news for " + selected_holding)
 
     if selected_holding == "Qonto":
 
@@ -185,7 +186,8 @@ elif app_mode == 'Private Holdings':
                 st.write("Title:", title)
                 st.write("Link:", link)
                 st.write()
-                
+          if not articles:
+            st.write("No recent news for " + selected_holding)              
 
 
     if selected_holding == "Bytedance":
@@ -207,7 +209,9 @@ elif app_mode == 'Private Holdings':
                 st.write("Title:", title)
                 st.write("Link:", link)
                 st.write()
-
+        if not articles:
+            st.write("No recent news for " + selected_holding)
+    
     if selected_holding == "Shein":
 
         url = ('https://newsapi.org/v2/everything?'
@@ -227,7 +231,9 @@ elif app_mode == 'Private Holdings':
                 st.write("Title:", title)
                 st.write("Link:", link)
                 st.write()
-
+        if not articles:
+            st.write("No recent news for " + selected_holding)
+    
     if selected_holding == "Stripe, Inc.":
 
         url = ('https://newsapi.org/v2/everything?'
@@ -247,7 +253,9 @@ elif app_mode == 'Private Holdings':
                 st.write("Title:", title)
                 st.write("Link:", link)
                 st.write()
-
+        if not articles:
+            st.write("No recent news for " + selected_holding)
+    
     if selected_holding == "Baibu":
 
         url = ('https://newsapi.org/v2/everything?'
@@ -267,6 +275,8 @@ elif app_mode == 'Private Holdings':
                 st.write("Title:", title)
                 st.write("Link:", link)
                 st.write()
+        if not articles:
+            st.write("No recent news for " + selected_holding)
 
     if selected_holding == "Fuzhou Pupu E-commerce Co., Ltd.":
 
@@ -287,6 +297,8 @@ elif app_mode == 'Private Holdings':
                 st.write("Title:", title)
                 st.write("Link:", link)
                 st.write()
+        if not articles:
+            st.write("No recent news for " + selected_holding)
 
     if selected_holding == "Octane Lending, Inc.":
 
@@ -307,6 +319,8 @@ elif app_mode == 'Private Holdings':
                 st.write("Title:", title)
                 st.write("Link:", link)
                 st.write()
+        if not articles:
+            st.write("No recent news for " + selected_holding)
 
     if selected_holding == "Shanghai Yinhe Industrial Co., Ltd.":
 
@@ -327,6 +341,8 @@ elif app_mode == 'Private Holdings':
                 st.write("Title:", title)
                 st.write("Link:", link)
                 st.write()
+        if not articles:
+            st.write("No recent news for " + selected_holding)
 
     if selected_holding == "N26, Inc.":
 
@@ -347,6 +363,8 @@ elif app_mode == 'Private Holdings':
                 st.write("Title:", title)
                 st.write("Link:", link)
                 st.write()
+        if not articles:
+            st.write("No recent news for " + selected_holding)
 
     if selected_holding == "Stash Financial, Inc.":
 
@@ -367,6 +385,8 @@ elif app_mode == 'Private Holdings':
                 st.write("Title:", title)
                 st.write("Link:", link)
                 st.write()
+        if not articles:
+            st.write("No recent news for " + selected_holding)
 
     if selected_holding == "Taxfix AG":
 
@@ -387,6 +407,8 @@ elif app_mode == 'Private Holdings':
                 st.write("Title:", title)
                 st.write("Link:", link)
                 st.write()
+        if not articles:
+            st.write("No recent news for " + selected_holding)
 
     if selected_holding == "Flipkart Internet Pvt. Ltd.":
 
@@ -407,6 +429,8 @@ elif app_mode == 'Private Holdings':
                 st.write("Title:", title)
                 st.write("Link:", link)
                 st.write()
+        if not articles:
+            st.write("No recent news for " + selected_holding)
 
     if selected_holding == "Neo Financial Technologies, Inc.":
 
@@ -427,6 +451,8 @@ elif app_mode == 'Private Holdings':
                 st.write("Title:", title)
                 st.write("Link:", link)
                 st.write()
+        if not articles:
+            st.write("No recent news for " + selected_holding)
 
     if selected_holding == "J.H. Whitney VI, L.P.":
 
@@ -447,4 +473,6 @@ elif app_mode == 'Private Holdings':
                 st.write("Title:", title)
                 st.write("Link:", link)
                 st.write()
+        if not articles:
+            st.write("No recent news for " + selected_holding)
 
