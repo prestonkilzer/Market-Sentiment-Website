@@ -186,7 +186,7 @@ elif app_mode == 'Private Holdings':
                 st.write("Title:", title)
                 st.write("Link:", link)
                 st.write()
-          if not articles:
+        if not articles:
             st.write("No recent news for " + selected_holding)              
 
 
