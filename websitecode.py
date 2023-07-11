@@ -134,7 +134,7 @@ elif app_mode == 'Market Info':
 
 elif app_mode == 'Private Holdings':
     # Define your private holdings
-    private_holdings = ["Space Exploration Technologies Corp", "Olinda SAS", "Beijing Bytedance Technology Co., Ltd.", "Roadget Business Pte Ltd", "Stripe, Inc.", "Guangzhou Zhijing Information Technology Co., Ltd.", "Fuzhou Pupu E-commerce Co., Ltd.", "Octane Lending, Inc.", "Shanghai Yinhe Industrial Co., Ltd.", "N26, Inc.", "Stash Financial, Inc.", "Taxfix AG", "Flipkart Internet Pvt. Ltd.", "Neo Financial Technologies, Inc.", "J.H. Whitney VI, L.P."]
+    private_holdings = ["SpaceX", "Qonto", "Bytedance", "Shein", "Stripe, Inc.", "Baibu", "Fuzhou Pupu E-commerce Co., Ltd.", "Octane Lending, Inc.", "Shanghai Yinhe Industrial Co., Ltd.", "N26, Inc.", "Stash Financial, Inc.", "Taxfix AG", "Flipkart Internet Pvt. Ltd.", "Neo Financial Technologies, Inc.", "J.H. Whitney VI, L.P."]
     # Get the current date and time
     current_datetime = datetime.now()
 
@@ -145,7 +145,7 @@ elif app_mode == 'Private Holdings':
     selected_holding = st.selectbox('Select a private holding:', private_holdings)
     # Now add some conditional display
 
-    if selected_holding == "Space Exploration Technologies Corp":
+    if selected_holding == "SpaceX":
 
         url = ('https://newsapi.org/v2/everything?'
            'q='+selected_holding+'&'
@@ -166,7 +166,7 @@ elif app_mode == 'Private Holdings':
                 st.write()
 
 
-    if selected_holding == "Olinda SAS":
+    if selected_holding == "Qonto":
 
         url = ('https://newsapi.org/v2/everything?'
            'q='+selected_holding+'&'
@@ -188,7 +188,7 @@ elif app_mode == 'Private Holdings':
                 
 
 
-    if selected_holding == "Beijing Bytedance Technology Co., Ltd.":
+    if selected_holding == "Bytedance":
 
         url = ('https://newsapi.org/v2/everything?'
            'q='+selected_holding+'&'
@@ -208,7 +208,7 @@ elif app_mode == 'Private Holdings':
                 st.write("Link:", link)
                 st.write()
 
-    if selected_holding == "Roadget Business Pte Ltd":
+    if selected_holding == "Shein":
 
         url = ('https://newsapi.org/v2/everything?'
            'q='+selected_holding+'&'
@@ -248,7 +248,7 @@ elif app_mode == 'Private Holdings':
                 st.write("Link:", link)
                 st.write()
 
-    if selected_holding == "Guangzhou Zhijing Information Technology Co., Ltd.":
+    if selected_holding == "Baibu":
 
         url = ('https://newsapi.org/v2/everything?'
            'q='+selected_holding+'&'
