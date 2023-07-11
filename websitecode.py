@@ -64,7 +64,7 @@ elif app_mode == 'Company Sentiment':
         for i in range(5):
             st.write(sentences[i])
             st.write(links[i])
-        st.write("Sentiment Score (100 is positive 0 is negative): " + final_score)
+        st.write("Sentiment Score between 0 and 100: " + final_score)
         categories = ['Positive', 'Neutral', 'Negative']
         values = [avgpos, avgneu, avgneg]
         colors = ['green', 'yellow', 'red']
@@ -108,7 +108,7 @@ elif app_mode == 'Market Info':
     for i in range(5):
         st.write(sentences[i])
         st.write(links[i])
-    st.write("Sentiment Score (100 is positive 0 is negative): " + final_score)
+    st.write("Sentiment Score between 0 and 100: " + final_score)
     categories = ['Positive', 'Neutral', 'Negative']
     values = [avgpos, avgneu, avgneg]
     colors = ['green', 'yellow', 'red']
