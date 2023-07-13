@@ -61,10 +61,8 @@ elif app_mode == 'Company Sentiment':
 
         # Apply weights to the percentages
         final_score = round((positive_percentage * 100) + (neutral_percentage * 50) + (negative_percentage * 0), 0)
-        for i in range(5):
-            st.write(sentences[i])
-            st.write(links[i])
-        st.write("Sentiment Score between 0 and 100: " + str(final_score))
+            
+        st.subheader("Sentiment Score between 0 and 100: " + str(final_score))
         categories = ['Positive', 'Neutral', 'Negative']
         values = [avgpos, avgneu, avgneg]
         colors = ['green', 'yellow', 'red']
@@ -86,6 +84,10 @@ elif app_mode == 'Company Sentiment':
         st.write("Low: " + str(low))
         st.write("Volume: " + str(volume))
 
+        for i in range(5):
+            st.write(sentences[i])
+            st.write(links[i])
+
 
 elif app_mode == 'Market Info':
     st.header('Previous Business Day SPY Information')
@@ -105,10 +107,7 @@ elif app_mode == 'Market Info':
     # Apply weights to the percentages
     final_score = round((positive_percentage * 100) + (neutral_percentage * 50) + (negative_percentage * 0), 0)
     
-    for i in range(5):
-        st.write(sentences[i])
-        st.write(links[i])
-    st.write("Sentiment Score between 0 and 100: " + str(final_score))
+    st.subheader("Sentiment Score between 0 and 100: " + str(final_score))
     categories = ['Positive', 'Neutral', 'Negative']
     values = [avgpos, avgneu, avgneg]
     colors = ['green', 'yellow', 'red']
@@ -132,7 +131,11 @@ elif app_mode == 'Market Info':
     st.write("Low: " + str(low))
     st.write("Volume: " + str(volume))
 
-elif app_mode == 'Private Holdings':
+    for i in range(5):
+        st.write(sentences[i])
+        st.write(links[i])
+
+elif app_mode == 'Selected Private News':
     # Define your private holdings
     private_holdings = ["SpaceX", "Qonto", "Bytedance", "Shein", "Stripe, Inc.", "Baibu", "Fuzhou Pupu E-commerce Co., Ltd.", "Octane Lending, Inc.", "Shanghai Yinhe Industrial Co., Ltd.", "N26, Inc.", "Stash Financial, Inc.", "Taxfix AG", "Flipkart Internet Pvt. Ltd.", "Neo Financial Technologies, Inc.", "J.H. Whitney VI, L.P."]
     # Get the current date and time
@@ -142,7 +145,7 @@ elif app_mode == 'Private Holdings':
     past_year_date = current_datetime - timedelta(days=30)
     # Create a dropdown menu with the private holdings
 
-    selected_holding = st.selectbox('Select a private holding:', private_holdings)
+    selected_holding = st.selectbox('Select a private company:', private_holdings)
     # Now add some conditional display
 
     if selected_holding == "SpaceX":
