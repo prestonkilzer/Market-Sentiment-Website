@@ -90,7 +90,6 @@ elif app_mode == 'Company Sentiment':
 
 
 elif app_mode == 'Market Info':
-    st.header('Previous Business Day SPY Information')
     
     sentences, links, summaries = sentiment.get_news('SPY')
     sentiment_scores =  sentiment.get_sentiment(sentences)
@@ -122,6 +121,7 @@ elif app_mode == 'Market Info':
     st.pyplot(plt)
 
     # Display the chart
+    st.header('Previous Business Day SPY Information')
 
     volume, open, close, high, low = get_market_info('SPY')
     print(volume, open, close, high, low)
