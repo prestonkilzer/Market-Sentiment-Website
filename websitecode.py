@@ -37,10 +37,9 @@ def get_private_holdings(company):
 st.title("Daily Market Analysis Tracker")
 
 st.sidebar.title("Website Pages")
-app_mode = st.sidebar.selectbox("Choose the section", ["Home", "Company Sentiment", "Market Info", "Private Holdings"])
+app_mode = st.sidebar.selectbox("Choose the section", ["Home", "Company Sentiment", "Market Info", "Selected Private News"])
 # Create the columns
 col1, col2= st.columns(2)
-
 
 if app_mode == 'Home':
     st.write("Where you can see the daily sentiment for equties and the market.")
@@ -167,7 +166,7 @@ elif app_mode == 'Selected Private News':
             title = article.get("title")
             link = article.get("url")
             if title and link:
-                col1.write("Title:", title)
+                st.write("Title:", title)
                 col2.write("Link:", link)
                 st.write()
         if not articles:
@@ -212,7 +211,7 @@ elif app_mode == 'Selected Private News':
             title = article.get("title")
             link = article.get("url")
             if title and link:
-                col1.write("Title:", title)
+                st.write("Title:", title)
                 col2.write("Link:", link)
                 st.write()
         if not articles:
@@ -234,7 +233,7 @@ elif app_mode == 'Selected Private News':
             title = article.get("title")
             link = article.get("url")
             if title and link:
-                col1.write("Title:", title)
+                st.write("Title:", title)
                 col2.write("Link:", link)
                 st.write()
         if not articles:
@@ -256,7 +255,7 @@ elif app_mode == 'Selected Private News':
             title = article.get("title")
             link = article.get("url")
             if title and link:
-                col1.write("Title:", title)
+                st.write("Title:", title)
                 col2.write("Link:", link)
                 st.write()
         if not articles:
@@ -278,7 +277,7 @@ elif app_mode == 'Selected Private News':
             title = article.get("title")
             link = article.get("url")
             if title and link:
-                col1.write("Title:", title)
+                st.write("Title:", title)
                 col2.write("Link:", link)
                 st.write()
         if not articles:
@@ -300,7 +299,7 @@ elif app_mode == 'Selected Private News':
             title = article.get("title")
             link = article.get("url")
             if title and link:
-                col1.write("Title:", title)
+                st.write("Title:", title)
                 col2.write("Link:", link)
                 st.write()
         if not articles:
@@ -322,7 +321,7 @@ elif app_mode == 'Selected Private News':
             title = article.get("title")
             link = article.get("url")
             if title and link:
-                col1.write("Title:", title)
+                st.write("Title:", title)
                 col2.write("Link:", link)
                 st.write()
         if not articles:
@@ -344,7 +343,7 @@ elif app_mode == 'Selected Private News':
             title = article.get("title")
             link = article.get("url")
             if title and link:
-                col1.write("Title:", title)
+                st.write("Title:", title)
                 col2.write("Link:", link)
                 st.write()
         if not articles:
@@ -366,7 +365,7 @@ elif app_mode == 'Selected Private News':
             title = article.get("title")
             link = article.get("url")
             if title and link:
-                col1.write("Title:", title)
+                st.write("Title:", title)
                 col2.write("Link:", link)
                 st.write()
         if not articles:
@@ -388,7 +387,7 @@ elif app_mode == 'Selected Private News':
             title = article.get("title")
             link = article.get("url")
             if title and link:
-                col1.write("Title:", title)
+                st.write("Title:", title)
                 col2.write("Link:", link)
                 st.write()
         if not articles:
@@ -410,7 +409,7 @@ elif app_mode == 'Selected Private News':
             title = article.get("title")
             link = article.get("url")
             if title and link:
-                col1.write("Title:", title)
+                st.write("Title:", title)
                 col2.write("Link:", link)
                 st.write()
         if not articles:
@@ -432,7 +431,7 @@ elif app_mode == 'Selected Private News':
             title = article.get("title")
             link = article.get("url")
             if title and link:
-                col1.write("Title:", title)
+                st.write("Title:", title)
                 col2.write("Link:", link)
                 st.write()
         if not articles:
@@ -454,7 +453,7 @@ elif app_mode == 'Selected Private News':
             title = article.get("title")
             link = article.get("url")
             if title and link:
-                col1.write("Title:", title)
+                st.write("Title:", title)
                 col2.write("Link:", link)
                 st.write()
         if not articles:
@@ -476,7 +475,7 @@ elif app_mode == 'Selected Private News':
             title = article.get("title")
             link = article.get("url")
             if title and link:
-                col1.write("Title:", title)
+                st.write("Title:", title)
                 col2.write("Link:", link)
                 st.write()
         if not articles:
