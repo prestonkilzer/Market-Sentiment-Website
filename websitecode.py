@@ -38,6 +38,9 @@ st.title("Daily Market Analysis Tracker")
 
 st.sidebar.title("Website Pages")
 app_mode = st.sidebar.selectbox("Choose the section", ["Home", "Company Sentiment", "Market Info", "Private Holdings"])
+# Create the columns
+col1, col2= st.columns(2)
+
 
 if app_mode == 'Home':
     st.write("Where you can see the daily sentiment for equties and the market.")
@@ -62,7 +65,7 @@ elif app_mode == 'Company Sentiment':
         # Apply weights to the percentages
         final_score = round((positive_percentage * 100) + (neutral_percentage * 50) + (negative_percentage * 0), 0)
             
-        st.subheader("Sentiment Score between 0 and 100: " + str(final_score))
+        col1.subheader("Sentiment Score between 0 and 100: " + str(final_score))
         categories = ['Positive', 'Neutral', 'Negative']
         values = [avgpos, avgneu, avgneg]
         colors = ['green', 'yellow', 'red']
@@ -74,19 +77,19 @@ elif app_mode == 'Company Sentiment':
         plt.xlabel('Sentiment')
         plt.ylabel('Score')
         plt.title(company_name +' Sentiment Score')
-        st.pyplot(plt)
+        col1.pyplot(plt)
 
         volume, open, close, high, low = get_market_info(company_name)
-        st.header('Previous Business Day ' + company_name+ ' Trading Information')
-        st.write("Open: " + str(open))
-        st.write("Close: " + str(close))
-        st.write("High: " + str(high))
-        st.write("Low: " + str(low))
-        st.write("Volume: " + str(volume))
+        col2.header('Previous Business Day ' + company_name+ ' Trading Information')
+        col2.write("Open: " + str(open))
+        col2.write("Close: " + str(close))
+        col2.write("High: " + str(high))
+        col2.write("Low: " + str(low))
+        col2.write("Volume: " + str(volume))
 
         for i in range(5):
-            st.write(sentences[i])
-            st.write(links[i])
+            col2.write(sentences[i])
+            col2.write(links[i])
 
 
 elif app_mode == 'Market Info':
@@ -107,7 +110,7 @@ elif app_mode == 'Market Info':
     # Apply weights to the percentages
     final_score = round((positive_percentage * 100) + (neutral_percentage * 50) + (negative_percentage * 0), 0)
     
-    st.subheader("Sentiment Score between 0 and 100: " + str(final_score))
+    col1.subheader("Sentiment Score between 0 and 100: " + str(final_score))
     categories = ['Positive', 'Neutral', 'Negative']
     values = [avgpos, avgneu, avgneg]
     colors = ['green', 'yellow', 'red']
@@ -119,21 +122,21 @@ elif app_mode == 'Market Info':
     plt.xlabel('Sentiment')
     plt.ylabel('Score')
     plt.title('SPY Sentiment Score')
-    st.pyplot(plt)
+    col1.pyplot(plt)
 
     # Display the chart
 
     volume, open, close, high, low = get_market_info('SPY')
     print(volume, open, close, high, low)
-    st.write("Open: " + str(open))
-    st.write("Close: " + str(close))
-    st.write("High: " + str(high))
-    st.write("Low: " + str(low))
-    st.write("Volume: " + str(volume))
+    col2.write("Open: " + str(open))
+    col2.write("Close: " + str(close))
+    col2.write("High: " + str(high))
+    col2.write("Low: " + str(low))
+    col2.write("Volume: " + str(volume))
 
     for i in range(5):
-        st.write(sentences[i])
-        st.write(links[i])
+        col2.write(sentences[i])
+        col2.write(links[i])
 
 elif app_mode == 'Selected Private News':
     # Define your private holdings
@@ -164,8 +167,8 @@ elif app_mode == 'Selected Private News':
             title = article.get("title")
             link = article.get("url")
             if title and link:
-                st.write("Title:", title)
-                st.write("Link:", link)
+                col1.write("Title:", title)
+                col2.write("Link:", link)
                 st.write()
         if not articles:
             st.write("No recent news for " + selected_holding)
@@ -186,8 +189,8 @@ elif app_mode == 'Selected Private News':
             title = article.get("title")
             link = article.get("url")
             if title and link:
-                st.write("Title:", title)
-                st.write("Link:", link)
+                col1.write("Title:", title)
+                col2.write("Link:", link)
                 st.write()
         if not articles:
             st.write("No recent news for " + selected_holding)              
@@ -209,8 +212,8 @@ elif app_mode == 'Selected Private News':
             title = article.get("title")
             link = article.get("url")
             if title and link:
-                st.write("Title:", title)
-                st.write("Link:", link)
+                col1.write("Title:", title)
+                col2.write("Link:", link)
                 st.write()
         if not articles:
             st.write("No recent news for " + selected_holding)
@@ -231,8 +234,8 @@ elif app_mode == 'Selected Private News':
             title = article.get("title")
             link = article.get("url")
             if title and link:
-                st.write("Title:", title)
-                st.write("Link:", link)
+                col1.write("Title:", title)
+                col2.write("Link:", link)
                 st.write()
         if not articles:
             st.write("No recent news for " + selected_holding)
@@ -253,8 +256,8 @@ elif app_mode == 'Selected Private News':
             title = article.get("title")
             link = article.get("url")
             if title and link:
-                st.write("Title:", title)
-                st.write("Link:", link)
+                col1.write("Title:", title)
+                col2.write("Link:", link)
                 st.write()
         if not articles:
             st.write("No recent news for " + selected_holding)
@@ -275,8 +278,8 @@ elif app_mode == 'Selected Private News':
             title = article.get("title")
             link = article.get("url")
             if title and link:
-                st.write("Title:", title)
-                st.write("Link:", link)
+                col1.write("Title:", title)
+                col2.write("Link:", link)
                 st.write()
         if not articles:
             st.write("No recent news for " + selected_holding)
@@ -297,8 +300,8 @@ elif app_mode == 'Selected Private News':
             title = article.get("title")
             link = article.get("url")
             if title and link:
-                st.write("Title:", title)
-                st.write("Link:", link)
+                col1.write("Title:", title)
+                col2.write("Link:", link)
                 st.write()
         if not articles:
             st.write("No recent news for " + selected_holding)
@@ -319,8 +322,8 @@ elif app_mode == 'Selected Private News':
             title = article.get("title")
             link = article.get("url")
             if title and link:
-                st.write("Title:", title)
-                st.write("Link:", link)
+                col1.write("Title:", title)
+                col2.write("Link:", link)
                 st.write()
         if not articles:
             st.write("No recent news for " + selected_holding)
@@ -341,8 +344,8 @@ elif app_mode == 'Selected Private News':
             title = article.get("title")
             link = article.get("url")
             if title and link:
-                st.write("Title:", title)
-                st.write("Link:", link)
+                col1.write("Title:", title)
+                col2.write("Link:", link)
                 st.write()
         if not articles:
             st.write("No recent news for " + selected_holding)
@@ -363,8 +366,8 @@ elif app_mode == 'Selected Private News':
             title = article.get("title")
             link = article.get("url")
             if title and link:
-                st.write("Title:", title)
-                st.write("Link:", link)
+                col1.write("Title:", title)
+                col2.write("Link:", link)
                 st.write()
         if not articles:
             st.write("No recent news for " + selected_holding)
@@ -385,8 +388,8 @@ elif app_mode == 'Selected Private News':
             title = article.get("title")
             link = article.get("url")
             if title and link:
-                st.write("Title:", title)
-                st.write("Link:", link)
+                col1.write("Title:", title)
+                col2.write("Link:", link)
                 st.write()
         if not articles:
             st.write("No recent news for " + selected_holding)
@@ -407,8 +410,8 @@ elif app_mode == 'Selected Private News':
             title = article.get("title")
             link = article.get("url")
             if title and link:
-                st.write("Title:", title)
-                st.write("Link:", link)
+                col1.write("Title:", title)
+                col2.write("Link:", link)
                 st.write()
         if not articles:
             st.write("No recent news for " + selected_holding)
@@ -429,8 +432,8 @@ elif app_mode == 'Selected Private News':
             title = article.get("title")
             link = article.get("url")
             if title and link:
-                st.write("Title:", title)
-                st.write("Link:", link)
+                col1.write("Title:", title)
+                col2.write("Link:", link)
                 st.write()
         if not articles:
             st.write("No recent news for " + selected_holding)
@@ -451,8 +454,8 @@ elif app_mode == 'Selected Private News':
             title = article.get("title")
             link = article.get("url")
             if title and link:
-                st.write("Title:", title)
-                st.write("Link:", link)
+                col1.write("Title:", title)
+                col2.write("Link:", link)
                 st.write()
         if not articles:
             st.write("No recent news for " + selected_holding)
@@ -473,8 +476,8 @@ elif app_mode == 'Selected Private News':
             title = article.get("title")
             link = article.get("url")
             if title and link:
-                st.write("Title:", title)
-                st.write("Link:", link)
+                col1.write("Title:", title)
+                col2.write("Link:", link)
                 st.write()
         if not articles:
             st.write("No recent news for " + selected_holding)
